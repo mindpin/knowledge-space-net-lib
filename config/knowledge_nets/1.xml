@@ -1,6 +1,5 @@
 <KnowledgeNet>
   <nodes>
-
     <node id="k1">
       <name>xxx 1</name>
       <desc>xxx 2</desc>
@@ -41,6 +40,10 @@
 
     <relation>
       <parent node_id="k2"/>
+      <child node_id="k4"/>
+    </relation>
+
+    <relation>
       <parent node_id="k3"/>
       <child node_id="k4"/>
     </relation>
