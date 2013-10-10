@@ -95,5 +95,61 @@
       <parent node_id="ks1"/>
       <child node_id="ks4"/>
     </relation>
+    <relation>
+      <parent node_id="ks2"/>
+      <child node_id="ks5"/>
+    </relation>
+    <relation>
+      <parent node_id="ks2"/>
+      <child node_id="ks7"/>
+    </relation>
+    <relation>
+      <parent node_id="ks3"/>
+      <child node_id="ks5"/>
+    </relation>
+    <relation>
+      <parent node_id="ks3"/>
+      <child node_id="ks6"/>
+    </relation>
+    <relation>
+      <parent node_id="ks4"/>
+      <child node_id="ks6"/>
+    </relation>
+    <relation>
+      <parent node_id="ks4"/>
+      <child node_id="ks7"/>
+    </relation>
+    <relation>
+      <parent node_id="ks5"/>
+      <child node_id="ks8"/>
+    </relation>
+    <relation>
+      <parent node_id="ks6"/>
+      <child node_id="ks8"/>
+    </relation>
+    <relation>
+      <parent node_id="ks7"/>
+      <child node_id="ks8"/>
+    </relation>
+    <relation>
+      <parent node_id="ks8"/>
+      <child node_id="ks9"/>
+    </relation>
+    <relation>
+      <parent node_id="ks9"/>
+      <child node_id="ks10"/>
+    </relation>
+    <relation>
+      <parent node_id="ks9"/>
+      <child node_id="ks11"/>
+    </relation>
+    <relation>
+      <parent node_id="ks10"/>
+      <child node_id="ks12"/>
+    </relation>
+    <relation>
+      <parent node_id="ks11"/>
+      <child node_id="ks12"/>
+    </relation>
   </relations>
 </KnowledgeSapceNet>
