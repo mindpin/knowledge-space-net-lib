@@ -1,0 +1,55 @@
+<KnowledgeNet>
+  <nodes>
+    <node id="k1">
+      <name>k1name</name>
+      <desc>k1desc</desc>
+    </node>
+    <node id="k2">
+      <name>k2name</name>
+      <desc>k2desc</desc>
+    </node>
+    <node id="k3">
+      <name>k3name</name>
+      <desc>k3desc</desc>
+    </node>
+    <node id="k4">
+      <name>k4name</name>
+      <desc>k4desc</desc>
+    </node>
+    <node id="k5">
+      <name>k5name</name>
+      <desc>k5desc</desc>
+    </node>
+    <node id="k6">
+      <name>k6name</name>
+      <desc>k6desc</desc>
+    </node>
+    <node id="k7">
+      <name>k7name</name>
+      <desc>k7desc</desc>
+    </node>
+  </nodes>
+
+  <relations>
+    <relation>
+      <parent node_id="k1"/>
+      <child node_id="k4"/>
+    </relation>
+    <relation>
+      <parent node_id="k2"/>
+      <child node_id="k4"/>
+    </relation>
+    <relation>
+      <parent node_id="k3"/>
+      <child node_id="k4"/>
+    </relation>
+    <relation>
+      <parent node_id="k4"/>
+      <child node_id="k5"/>
+    </relation>
+    <relation>
+      <parent node_id="k4"/>
+      <child node_id="k6"/>
+    </relation>
+  </relations>
+</KnowledgeNet>
