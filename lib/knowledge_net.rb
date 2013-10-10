@@ -20,7 +20,7 @@ class KnowledgeNet
       hash[parent_id].children << child_id if hash[parent_id] != nil
       hash[child_id].parents << parent_id if hash[child_id] != nil 
     end
-    self.knowledge_nodes = hash
+    self.knowledge_nodes = hash.values
   end
 
   def self.load_xml_file(file_path)
@@ -30,13 +30,15 @@ class KnowledgeNet
 
   def root_nodes
     kns = []
-    self.knowledge_nodes.each do |k,v|
+    self.knowledge_nodes.each do |v|
       kns << v if v.is_no_parents
     end
     kns
   end
 
   def find_node_by_id(node_id)
-    self.knowledge_nodes[node_id] || nil
+    self.knowledge_nodes.each do |v|
+      return v if v.id == node_id
+    end
   end
 end

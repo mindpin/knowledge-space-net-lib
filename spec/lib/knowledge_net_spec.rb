@@ -9,11 +9,11 @@ describe KnowledgeNet do
   end
 
   it 'self.load_xml_file(file_path) 2 parents' do
-    KnowledgeNet.load_xml_file(path).knowledge_nodes['k4'].parents.size.should == 2
+    KnowledgeNet.load_xml_file(path).knowledge_nodes[3].parents.size.should == 2
   end
 
   it 'self.load_xml_file(file_path) 3 children' do
-    KnowledgeNet.load_xml_file(path).knowledge_nodes['k1'].children.count.should be 2
+    KnowledgeNet.load_xml_file(path).knowledge_nodes[0].children.count.should be 2
   end
 
   it 'root_nodes' do
