@@ -41,6 +41,10 @@
 
     <relation>
       <parent node_id="k2"/>
+      <child node_id="k4"/>
+    </relation>
+
+    <relation>
       <parent node_id="k3"/>
       <child node_id="k4"/>
     </relation>
