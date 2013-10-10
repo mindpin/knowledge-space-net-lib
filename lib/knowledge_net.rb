@@ -14,11 +14,11 @@ class KnowledgeNet
     end
 
     doc.css("relations relation").map do |relation|
-      parent = relation.css("parent").first.attr("node_id")
-      child = relation.css("child").first.attr("node_id")
+      parent_arr =  get_css_arr(relation.css("parent"))
+      child_arr  =  get_css_arr(relation.css("child"))
       kns.map do |knowledge_node|
-        knowledge_node.children = child if knowledge_node.id == parent
-        knowledge_node.parents = parent if knowledge_node.id == child
+        knowledge_node.children = knowledge_node.children + child_arr if parent_arr.include?(knowledge_node.id)
+        knowledge_node.parents = knowledge_node.parents + parent_arr  if child_arr.include?(knowledge_node.id)
       end
     end
     self.knowledge_nodes = kns
@@ -43,7 +43,13 @@ class KnowledgeNet
     end
     node
   end
-end
 
-# knowledge_net = KnowledgeNet.load_xml_file("config/knowledge_nets/1.xml")
-# knowledge_net.root_nodes
+  private
+    def get_css_arr(css_arr)
+      arr=[]
+      css_arr.each do |css|
+        arr << css.attr("node_id")
+      end
+      arr
+    end
+end

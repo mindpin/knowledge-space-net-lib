@@ -5,9 +5,11 @@ class KnowledgeNode
     self.id = option[:id]
     self.name = option[:name]
     self.desc = option[:desc]
+    self.parents = []
+    self.children = []
   end
 
   def is_no_parents
-    self.parents == nil
+    self.parents.count == 0
   end
 end
