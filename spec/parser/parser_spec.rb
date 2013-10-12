@@ -28,5 +28,13 @@ describe KnowledgeSpaceParser do
         knowledge_space_net.get_space_node([node]).should_not nil
       }
     }
+
+    it {
+      knowledge_space_nodes.each { |node|
+        p 111
+        p node.knowledge_nodes.map(&:id)
+        p node.outer_nodes.map(&:id)
+      }
+    }
   end
 end
