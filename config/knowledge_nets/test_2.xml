@@ -24,10 +24,6 @@
       <name>k6name</name>
       <desc>k6desc</desc>
     </node>
-    <node id="k7">
-      <name>k7name</name>
-      <desc>k7desc</desc>
-    </node>
   </nodes>
 
   <relations>

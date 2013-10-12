@@ -46,20 +46,20 @@ describe KnowledgeSpaceNet do
     describe 'outer_nodes' do
       it{
         ks1 = @knowledge_space_net.get_space_node([])
-        ks1.outer_nodes.map(&:id).should =~ ["k1","k2","k3",'k7']
+        ks1.outer_nodes.map(&:id).should =~ ["k1","k2","k3"]
       }
 
       it{
         k1 = @knowledge_net.find_node_by_id('k1')
         ks2 = @knowledge_space_net.get_space_node([k1])
-        ks2.outer_nodes.map(&:id).should =~ ['k2','k3','k7']
+        ks2.outer_nodes.map(&:id).should =~ ['k2','k3']
       }
 
       it{
         k1 = @knowledge_net.find_node_by_id('k1')
         k2 = @knowledge_net.find_node_by_id('k2')
         ks5 = @knowledge_space_net.get_space_node([k1,k2])
-        ks5.outer_nodes.map(&:id).should =~ ['k3','k7']
+        ks5.outer_nodes.map(&:id).should =~ ['k3']
       }
 
       it{
@@ -67,7 +67,7 @@ describe KnowledgeSpaceNet do
         k2 = @knowledge_net.find_node_by_id('k2')
         k3 = @knowledge_net.find_node_by_id('k3')
         ks8 = @knowledge_space_net.get_space_node([k1,k2,k3])
-        ks8.outer_nodes.map(&:id).should =~ ['k4','k7']
+        ks8.outer_nodes.map(&:id).should =~ ['k4']
       }
 
       it{
@@ -76,7 +76,7 @@ describe KnowledgeSpaceNet do
         k3 = @knowledge_net.find_node_by_id('k3')
         k4 = @knowledge_net.find_node_by_id('k4')
         ks9 = @knowledge_space_net.get_space_node([k1,k2,k3,k4])
-        ks9.outer_nodes.map(&:id).should =~ ['k5','k6','k7']
+        ks9.outer_nodes.map(&:id).should =~ ['k5','k6']
       }
 
       it{
@@ -86,7 +86,7 @@ describe KnowledgeSpaceNet do
         k4 = @knowledge_net.find_node_by_id('k4')
         k5 = @knowledge_net.find_node_by_id('k5')
         ks10 = @knowledge_space_net.get_space_node([k1,k2,k3,k4,k5])
-        ks10.outer_nodes.map(&:id).should =~ ['k6','k7']
+        ks10.outer_nodes.map(&:id).should =~ ['k6']
       }
     end
   end
