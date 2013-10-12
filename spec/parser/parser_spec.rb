@@ -22,5 +22,9 @@ describe KnowledgeSpaceParser do
     it {
       # knowledge_space_nodes.length.should > 0
     }
+
+    it {
+      p knowledge_net.root_nodes
+    }
   end
 end
