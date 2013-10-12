@@ -17,8 +17,10 @@ class KnowledgeNet
     doc.css("relations relation").map do |relation|
       parent_id =  relation.css("parent").first.attr("node_id")
       child_id  =  relation.css("child").first.attr("node_id")
-      hash[parent_id].children << child_id if hash[parent_id] != nil
-      hash[child_id].parents << parent_id if hash[child_id] != nil 
+      parent = hash[parent_id]
+      child = hash[child_id]
+      parent.children << child if !!parent
+      child.parents << parent if !!child
     end
     self.knowledge_nodes = hash.values
   end
