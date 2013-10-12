@@ -1,11 +1,15 @@
 class KnowledgeSpaceNet
   attr_reader :root_nodes
-  def initialize(knowledge_net, doc)
+  attr_accessor :knowledge_space_nodes
+  def initialize(knowledge_net, doc = nil)
     @knowledge_net = knowledge_net
-    @doc = doc
-    _build_knowledge_space_nodes()
-    _build_node_relaction()
-    _build_root_nodes()
+
+    if doc
+      @doc = doc
+      _build_knowledge_space_nodes()
+      _build_node_relaction()
+      _build_root_nodes()
+    end
   end
 
   private
