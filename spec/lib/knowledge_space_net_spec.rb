@@ -44,4 +44,26 @@ describe KnowledgeSpaceNet do
     }
 
   end
+
+  describe 'parse' do
+    before do
+      knowledge_net_xml = "config/knowledge_nets/test_2.xml"
+      @knowledge_net = KnowledgeNet.load_xml_file(knowledge_net_xml)
+      @knowledge_space_net = KnowledgeSpaceNet.new(@knowledge_net)
+    end
+
+    it{
+      @knowledge_space_net.knowledge_space_nodes.should == []
+    }
+
+    it{
+      k2 = @knowledge_net.find_node_by_id('k2')
+      @knowledge_space_net.knowledge_space_nodes.should == []
+      @knowledge_space_net.get_space_node([k2]).should == nil
+      space_node = KnowledgeSpaceNode.new('ks1', [k2])
+      @knowledge_space_net.add_node(space_node)
+      @knowledge_space_net.knowledge_space_nodes.should == [space_node]
+      @knowledge_space_net.get_space_node([k2]).should == space_node
+    }
+  end
 end

@@ -6,9 +6,7 @@ class KnowledgeSpaceParser
     end
 
     def parse(knowledge_net)
-      knowledge_space_net = KnowledgeSpaceNet.new(knowledge_net)
-      knowledge_space_net.knowledge_space_nodes = []
-      knowledge_space_net
+      KnowledgeSpaceNet.new(knowledge_net)
     end
   end
 end

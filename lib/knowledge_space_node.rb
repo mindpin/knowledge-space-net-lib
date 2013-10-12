@@ -1,4 +1,4 @@
-class KnowledgeSapceNode
+class KnowledgeSpaceNode
   attr_reader :id, :knowledge_nodes, :parents, :children
 
   def initialize(id, knowledge_nodes)
