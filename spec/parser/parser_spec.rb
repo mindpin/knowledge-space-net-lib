@@ -5,7 +5,7 @@ describe KnowledgeSpaceParser do
     let(:path){ "spec/parser/xml/knowledge-net-example-1.xml" }
     let(:knowledge_net){ KnowledgeNet.load_xml_file(path) }
     let(:knowledge_space_net) {
-      KnowledgeSpaceParser.parse(knowledge_net)
+      KnowledgeSpaceParser.new(knowledge_net).parse
     }
     let(:knowledge_space_nodes) {
       knowledge_space_net.knowledge_space_nodes
@@ -20,11 +20,13 @@ describe KnowledgeSpaceParser do
     }
 
     it {
-      # knowledge_space_nodes.length.should > 0
+      knowledge_space_nodes.length.should > 0
     }
 
-    it {
-      p knowledge_net.root_nodes
+    it('知识网络根节点应当有对应的知识空间节点') {
+      knowledge_net.root_nodes.each { |node|
+        knowledge_space_net.get_space_node([node]).should_not nil
+      }
     }
   end
 end

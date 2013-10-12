@@ -1,8 +1,11 @@
 class KnowledgeSpaceNet
-  attr_reader :root_nodes
-  attr_accessor :knowledge_space_nodes
+  attr_reader :root_nodes,:knowledge_space_nodes
   def initialize(knowledge_net, doc = nil)
     @knowledge_net = knowledge_net
+    
+    @knowledge_space_nodes_id_hash = {}
+    @knowledge_space_nodes_key_hash = {}
+    @knowledge_space_nodes = []
 
     if doc
       @doc = doc
@@ -17,6 +20,13 @@ class KnowledgeSpaceNet
     @knowledge_space_nodes_key_hash[key]
   end
 
+  def add_node(knowledge_space_node)
+    @knowledge_space_nodes_id_hash[knowledge_space_node.id] = knowledge_space_node
+    key = _knowledge_nodes_to_key(knowledge_space_node.knowledge_nodes)
+    @knowledge_space_nodes_key_hash[key] = knowledge_space_node
+    @knowledge_space_nodes << knowledge_space_node
+  end
+
   private
   def _knowledge_nodes_to_key(knowledge_nodes)
     ids = knowledge_nodes.uniq.map(&:id).sort
@@ -29,7 +39,7 @@ class KnowledgeSpaceNet
       child_id = relation.at_css("child").attr("node_id")
       parent = @knowledge_space_nodes_id_hash[parent_id]
       child = @knowledge_space_nodes_id_hash[child_id]
-      KnowledgeSapceNode.add_relaction(parent, child)
+      KnowledgeSpaceNode.add_relaction(parent, child)
     end
   end
 
@@ -40,9 +50,6 @@ class KnowledgeSpaceNet
   end
 
   def _build_knowledge_space_nodes
-    @knowledge_space_nodes_id_hash = {}
-    @knowledge_space_nodes_key_hash = {}
-    @knowledge_space_nodes = []
     @doc.css("KnowledgeSapceNet nodes node").each do |node|
       space_node_id = node.attr("id")
 
@@ -52,11 +59,8 @@ class KnowledgeSpaceNet
         knowledge_nodes << @knowledge_net.find_node_by_id(node_id)
       end
 
-      node = KnowledgeSapceNode.new(space_node_id, knowledge_nodes)
-      key = _knowledge_nodes_to_key(knowledge_nodes)
-      @knowledge_space_nodes_id_hash[space_node_id] = node
-      @knowledge_space_nodes_key_hash[key] = node
-      @knowledge_space_nodes << node
+      node = KnowledgeSpaceNode.new(space_node_id, knowledge_nodes)
+      add_node(node)
     end
   end
 end
