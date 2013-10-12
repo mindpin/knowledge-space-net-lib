@@ -30,7 +30,7 @@ class KnowledgeSpaceNode
   end
 
   class << self
-    def add_relaction(parent, child)
+    def add_relation(parent, child)
       return if !parent || !child
       parent.add_child(child)
       child.add_parent(parent)

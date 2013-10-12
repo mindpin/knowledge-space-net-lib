@@ -10,7 +10,7 @@ class KnowledgeSpaceNet
     if doc
       @doc = doc
       _build_knowledge_space_nodes()
-      _build_node_relaction()
+      _build_node_relation()
       _build_root_nodes()
     end
   end
@@ -34,13 +34,13 @@ class KnowledgeSpaceNet
     ids.hash
   end
 
-  def _build_node_relaction
+  def _build_node_relation
     @doc.css("relations relation").each do |relation|
       parent_id = relation.at_css("parent").attr("node_id")
       child_id = relation.at_css("child").attr("node_id")
       parent = @knowledge_space_nodes_id_hash[parent_id]
       child = @knowledge_space_nodes_id_hash[child_id]
-      KnowledgeSpaceNode.add_relaction(parent, child)
+      KnowledgeSpaceNode.add_relation(parent, child)
     end
   end
 
