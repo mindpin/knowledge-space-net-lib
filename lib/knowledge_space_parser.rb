@@ -30,7 +30,7 @@ class KnowledgeSpaceParser
     # 如果这个新的空间节点还不存在于空间中，则添加进来。直到无可添加为止
 
     @knowledge_space_net.knowledge_space_nodes.each { |space_node|
-      # _r_parse_space_node(space_node)
+      _r_parse_space_node(space_node)
     }
 
     return @knowledge_space_net
@@ -43,22 +43,24 @@ class KnowledgeSpaceParser
     }
   end
 
-  def _r_space_node(space_node)
-    # new_space_nodes = []
+  def _r_parse_space_node(space_node)
+    new_space_nodes = []
 
-    # # 第一步，逐个遍历 outer_nodes 看是否有可以添加的状态
-    # space_node.outer_nodes.each { |outer_node|
-    #   new_state_nodes = (space_node.knowledge_nodes + [outer_node])
+    # 第一步，逐个遍历 outer_nodes 看是否有可以添加的状态
+    space_node.outer_nodes.each { |outer_node|
+      new_state_nodes = (space_node.knowledge_nodes + [outer_node])
 
-    #   # 如果新状态还未加入，则加入
-    #   if @knowledge_space_net.get_space_node(new_state_nodes).nil?
-    #     new_space_node = KnowledgeSpaceNode.new(new_id, new_state_nodes) # TODO 构建时可能需要排序以便后续使用
-    #     @knowledge_space_net.add_relation()
-    #     new_space_nodes << new_space_node
-    #   end
-    # }
+      # 如果新状态还未加入，则加入
+      if @knowledge_space_net.get_space_node(new_state_nodes).nil?
+        new_space_node = KnowledgeSpaceNode.new(new_id, new_state_nodes) # TODO 构建时可能需要排序以便后续使用
+        @knowledge_space_net.add_relation(space_node, new_space_node)
+        new_space_nodes << new_space_node
+      end
+    }
 
-    # # 第二步，如果有新状态加入，进一步处理这些新状态
-    # new_space_nodes.each do 
+    # 第二步，如果有新状态加入，进一步处理这些新状态
+    new_space_nodes.each { |_space_node|
+      _r_parse_space_node(_space_node)
+    }
   end
 end
