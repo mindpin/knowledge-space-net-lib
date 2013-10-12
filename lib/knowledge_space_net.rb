@@ -21,6 +21,7 @@ class KnowledgeSpaceNet
   end
 
   def add_node(knowledge_space_node)
+    knowledge_space_node.knowledge_net = @knowledge_net
     @knowledge_space_nodes_id_hash[knowledge_space_node.id] = knowledge_space_node
     key = _knowledge_nodes_to_key(knowledge_space_node.knowledge_nodes)
     @knowledge_space_nodes_key_hash[key] = knowledge_space_node
