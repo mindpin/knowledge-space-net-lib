@@ -28,6 +28,12 @@ class KnowledgeSpaceNet
     @knowledge_space_nodes << knowledge_space_node
   end
 
+  def add_relation(parent_space_node, child_space_node)
+    return if !parent_space_node || !child_space_node
+    parent_space_node.add_child(child_space_node)
+    child_space_node.add_parent(parent_space_node)
+  end
+
   private
   def _knowledge_nodes_to_key(knowledge_nodes)
     ids = knowledge_nodes.uniq.map(&:id).sort
@@ -40,7 +46,7 @@ class KnowledgeSpaceNet
       child_id = relation.at_css("child").attr("node_id")
       parent = @knowledge_space_nodes_id_hash[parent_id]
       child = @knowledge_space_nodes_id_hash[child_id]
-      KnowledgeSpaceNode.add_relation(parent, child)
+      add_relation(parent, child)
     end
   end
 

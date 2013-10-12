@@ -29,11 +29,4 @@ class KnowledgeSpaceNode
     ).uniq
   end
 
-  class << self
-    def add_relation(parent, child)
-      return if !parent || !child
-      parent.add_child(child)
-      child.add_parent(parent)
-    end
-  end
 end
