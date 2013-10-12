@@ -8,6 +8,11 @@ class KnowledgeSpaceNode
     @children = []
   end
 
+  def add_relation(relation)
+    add_child(relation.child) if relation.parent == self
+    add_parent(relation.parent) if relation.child == self
+  end
+
   def add_parent(parent)
     return if @parents.include?(parent)
     @parents.push(parent)

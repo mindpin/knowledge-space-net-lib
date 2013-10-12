@@ -6,6 +6,7 @@ class KnowledgeSpaceNet
     @knowledge_space_nodes_id_hash = {}
     @knowledge_space_nodes_key_hash = {}
     @knowledge_space_nodes = []
+    @relations = []
 
     if doc
       @doc = doc
@@ -30,8 +31,42 @@ class KnowledgeSpaceNet
 
   def add_relation(parent_space_node, child_space_node)
     return if !parent_space_node || !child_space_node
-    parent_space_node.add_child(child_space_node)
-    child_space_node.add_parent(parent_space_node)
+
+    relation = KnowledgeSpaceRelation.new(parent_space_node, child_space_node)
+    @relations.push(relation)
+    parent_space_node.add_relation(relation)
+    child_space_node.add_relation(relation)
+  end
+
+  def save_to(file_path)
+    builder = Nokogiri::XML::Builder.new do |xml|
+      xml.KnowledgeSapceNet{
+        xml.nodes{
+          @knowledge_space_nodes.each do |node|
+            xml.node(:id => node.id){
+              xml.knowledge_node_ids{
+                node.knowledge_nodes.each do |kn|
+                  xml.id kn.id
+                end
+              }
+            }
+          end
+        }
+        xml.relations{
+          @relations.each do |relation|
+            xml.relation{
+              xml.parent_(:node_id => relation.parent.id)
+              xml.child_(:node_id => relation.child.id)
+            }
+          end
+        }
+      }
+    end
+    
+    path = Rails.root.join(file_path)
+    File.open(path,"w") do |f|
+      f << builder.to_xml
+    end
   end
 
   private
