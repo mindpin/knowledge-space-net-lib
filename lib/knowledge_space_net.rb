@@ -39,6 +39,13 @@ class KnowledgeSpaceNet
   end
 
   def save_to(file_path)
+    path = Rails.root.join(file_path)
+    File.open(path,"w") do |f|
+      f << to_xml()
+    end
+  end
+
+  def to_xml
     builder = Nokogiri::XML::Builder.new do |xml|
       xml.KnowledgeSapceNet{
         xml.nodes{
@@ -63,10 +70,7 @@ class KnowledgeSpaceNet
       }
     end
     
-    path = Rails.root.join(file_path)
-    File.open(path,"w") do |f|
-      f << builder.to_xml
-    end
+    builder.to_xml
   end
 
   private
