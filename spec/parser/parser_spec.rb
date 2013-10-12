@@ -31,9 +31,28 @@ describe KnowledgeSpaceParser do
 
     it {
       knowledge_space_nodes.each { |node|
-        p 111
+        p ''
         p node.knowledge_nodes.map(&:id)
-        p node.outer_nodes.map(&:id)
+        # p node.outer_nodes.map(&:id)
+      }
+    }
+  end
+
+  describe 'parse-lifei-example' do
+    let(:path){ "config/knowledge_nets/test_2.xml" }
+    let(:knowledge_net){ KnowledgeNet.load_xml_file(path) }
+    let(:knowledge_space_net) {
+      KnowledgeSpaceParser.new(knowledge_net).parse
+    }
+    let(:knowledge_space_nodes) {
+      knowledge_space_net.knowledge_space_nodes
+    }
+
+    it {
+      knowledge_space_nodes.each { |node|
+        p ''
+        p node.knowledge_nodes.map(&:id)
+        # p node.outer_nodes.map(&:id)
       }
     }
   end

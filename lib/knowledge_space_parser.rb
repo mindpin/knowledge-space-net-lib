@@ -53,6 +53,7 @@ class KnowledgeSpaceParser
       # 如果新状态还未加入，则加入
       if @knowledge_space_net.get_space_node(new_state_nodes).nil?
         new_space_node = KnowledgeSpaceNode.new(new_id, new_state_nodes) # TODO 构建时可能需要排序以便后续使用
+        @knowledge_space_net.add_node(new_space_node)
         @knowledge_space_net.add_relation(space_node, new_space_node)
         new_space_nodes << new_space_node
       end
