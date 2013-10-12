@@ -12,13 +12,23 @@ class KnowledgeSpaceNet
     end
   end
 
+  def get_space_node(knowledge_nodes)
+    key = _knowledge_nodes_to_key(knowledge_nodes)
+    @knowledge_space_nodes_key_hash[key]
+  end
+
   private
+  def _knowledge_nodes_to_key(knowledge_nodes)
+    ids = knowledge_nodes.uniq.map(&:id).sort
+    ids.hash
+  end
+
   def _build_node_relaction
     @doc.css("relations relation").each do |relation|
       parent_id = relation.at_css("parent").attr("node_id")
       child_id = relation.at_css("child").attr("node_id")
-      parent = @knowledge_space_nodes_hash[parent_id]
-      child = @knowledge_space_nodes_hash[child_id]
+      parent = @knowledge_space_nodes_id_hash[parent_id]
+      child = @knowledge_space_nodes_id_hash[child_id]
       KnowledgeSapceNode.add_relaction(parent, child)
     end
   end
@@ -30,7 +40,8 @@ class KnowledgeSpaceNet
   end
 
   def _build_knowledge_space_nodes
-    @knowledge_space_nodes_hash = {}
+    @knowledge_space_nodes_id_hash = {}
+    @knowledge_space_nodes_key_hash = {}
     @knowledge_space_nodes = []
     @doc.css("KnowledgeSapceNet nodes node").each do |node|
       space_node_id = node.attr("id")
@@ -42,7 +53,9 @@ class KnowledgeSpaceNet
       end
 
       node = KnowledgeSapceNode.new(space_node_id, knowledge_nodes)
-      @knowledge_space_nodes_hash[node.id] = node
+      key = _knowledge_nodes_to_key(knowledge_nodes)
+      @knowledge_space_nodes_id_hash[space_node_id] = node
+      @knowledge_space_nodes_key_hash[key] = node
       @knowledge_space_nodes << node
     end
   end
