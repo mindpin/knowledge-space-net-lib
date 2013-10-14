@@ -9,7 +9,7 @@ class KnowledgeNode
     self.children = []
   end
 
-  def is_no_parents
+  def has_no_parents?
     self.parents.count == 0
   end
 end
