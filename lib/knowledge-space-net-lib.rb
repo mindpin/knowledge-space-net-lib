@@ -1,4 +1,3 @@
-require 'nokogiri'
 require 'knowledge_net'
 require 'knowledge_node'
 require 'knowledge_space_net'
