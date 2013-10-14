@@ -39,7 +39,12 @@ class KnowledgeSpaceNet
   end
 
   def save_to(file_path)
-    path = Rails.root.join(file_path)
+    if defined?(Rails)
+      path = Rails.root.join(file_path)
+    else
+      path = File.expand_path(file_path)
+    end
+
     File.open(path,"w") do |f|
       f << to_xml()
     end
