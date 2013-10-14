@@ -33,7 +33,7 @@ class KnowledgeNet
   def root_nodes
     kns = []
     self.knowledge_nodes.each do |v|
-      kns << v if v.is_no_parents
+      kns << v if v.has_no_parents?
     end
     kns
   end
