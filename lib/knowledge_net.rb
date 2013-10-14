@@ -26,7 +26,8 @@ class KnowledgeNet
   end
 
   def self.load_xml_file(file_path)
-    doc = Nokogiri::XML(File.open(file_path))
+    path = File.join(KnowledgeSpaceNetLib::BASE_PATH, file_path)
+    doc = Nokogiri::XML(File.open(path))
     KnowledgeNet.new(doc)
   end
 
