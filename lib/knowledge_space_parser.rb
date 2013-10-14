@@ -51,13 +51,17 @@ class KnowledgeSpaceParser
     space_node.outer_nodes.each { |outer_node|
       new_state_nodes = (space_node.knowledge_nodes + [outer_node])
 
+      new_space_node = @knowledge_space_net.get_space_node(new_state_nodes)
+
       # 如果新状态还未加入，则加入
-      if @knowledge_space_net.get_space_node(new_state_nodes).nil?
+      # 如果新状态已经加入，则增加关系声明
+      if new_space_node.nil?
         new_space_node = KnowledgeSpaceNode.new(new_id, new_state_nodes) # TODO 构建时可能需要排序以便后续使用
         @knowledge_space_net.add_node(new_space_node)
-        @knowledge_space_net.add_relation(space_node, new_space_node)
         new_space_nodes << new_space_node
       end
+
+      @knowledge_space_net.add_relation(space_node, new_space_node)
     }
 
     # 第二步，如果有新状态加入，进一步处理这些新状态
