@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<KnowledgeNet>
+  <nodes>
+    <node id="n0">
+      <name>字符集</name>
+      <desc/>
+    </node>
+    <node id="n1">
+      <name>单行注释</name>
+      <desc/>
+    </node>
+    <node id="n2">
+      <name>多行注释</name>
+      <desc/>
+    </node>
+    <node id="n3">
+      <name>标识符</name>
+      <desc/>
+    </node>
+    <node id="n4">
+      <name>保留字</name>
+      <desc/>
+    </node>
+    <node id="n5">
+      <name>句尾可选的分号</name>
+      <desc/>
+    </node>
+    <node id="n6">
+      <name>直接量</name>
+      <desc/>
+    </node>
+    <node id="n7">
+      <name>语句</name>
+      <desc/>
+    </node>
+    <node id="n8">
+      <name>注释</name>
+      <desc/>
+    </node>
+    <node id="n9">
+      <name>词法结构</name>
+      <desc/>
+    </node>
+    <node id="n10">
+      <name>词法分析</name>
+      <desc/>
+    </node>
+    <node id="n11">
+      <name>语法树</name>
+      <desc/>
+    </node>
+    <node id="n12">
+      <name>编译原理</name>
+      <desc/>
+    </node>
+    <node id="n13">
+      <name>整数</name>
+      <desc/>
+    </node>
+    <node id="n14">
+      <name>浮点数</name>
+      <desc/>
+    </node>
+    <node id="n15">
+      <name>字符串</name>
+      <desc/>
+    </node>
+    <node id="n16">
+      <name>转义字符</name>
+      <desc/>
+    </node>
+    <node id="n17">
+      <name>布尔值</name>
+      <desc/>
+    </node>
+    <node id="n18">
+      <name>null</name>
+      <desc/>
+    </node>
+    <node id="n19">
+      <name>undefined</name>
+      <desc/>
+    </node>
+    <node id="n20">
+      <name>值</name>
+      <desc/>
+    </node>
+    <node id="n21">
+      <name>一般对象</name>
+      <desc/>
+    </node>
+    <node id="n22">
+      <name>全局对象</name>
+      <desc/>
+    </node>
+    <node id="n23">
+      <name>包装对象</name>
+      <desc/>
+    </node>
+    <node id="n24">
+      <name>全局属性</name>
+      <desc/>
+    </node>
+    <node id="n25">
+      <name>全局函数</name>
+      <desc/>
+    </node>
+    <node id="n26">
+      <name>全局构造函数</name>
+      <desc/>
+    </node>
+    <node id="n27">
+      <name>变量</name>
+      <desc/>
+    </node>
+    <node id="n28">
+      <name>变量声明</name>
+      <desc/>
+    </node>
+    <node id="n29">
+      <name>变量作用域</name>
+      <desc/>
+    </node>
+    <node id="n30">
+      <name>表达式</name>
+      <desc/>
+    </node>
+    <node id="n31">
+      <name>运算符</name>
+      <desc/>
+    </node>
+    <node id="n32">
+      <name>合法程序语句</name>
+      <desc/>
+    </node>
+    <node id="n33">
+      <name>四则运算</name>
+      <desc/>
+    </node>
+    <node id="n34">
+      <name>关系表达式</name>
+      <desc/>
+    </node>
+    <node id="n35">
+      <name>逻辑表达式</name>
+      <desc/>
+    </node>
+    <node id="n36">
+      <name>赋值表达式</name>
+      <desc/>
+    </node>
+    <node id="n37">
+      <name>三元条件运算符?:</name>
+      <desc/>
+    </node>
+    <node id="n38">
+      <name>特殊运算符</name>
+      <desc/>
+    </node>
+    <node id="n39">
+      <name>typeof</name>
+      <desc/>
+    </node>
+    <node id="n40">
+      <name>delete</name>
+      <desc/>
+    </node>
+    <node id="n41">
+      <name>void</name>
+      <desc/>
+    </node>
+    <node id="n42">
+      <name>条件语句</name>
+      <desc/>
+    </node>
+    <node id="n43">
+      <name>循环结构</name>
+      <desc/>
+    </node>
+    <node id="n44">
+      <name>跳转结构</name>
+      <desc/>
+    </node>
+    <node id="n45">
+      <name>使用对象</name>
+      <desc/>
+    </node>
+    <node id="n46">
+      <name>对象操作</name>
+      <desc/>
+    </node>
+    <node id="n47">
+      <name>创建对象</name>
+      <desc/>
+    </node>
+    <node id="n48">
+      <name>对象属性的一般操作</name>
+      <desc/>
+    </node>
+    <node id="n49">
+      <name>删除属性</name>
+      <desc/>
+    </node>
+    <node id="n50">
+      <name>检测属性</name>
+      <desc/>
+    </node>
+    <node id="n51">
+      <name>枚举属性for...in</name>
+      <desc/>
+    </node>
+    <node id="n52">
+      <name>属性取值</name>
+      <desc/>
+    </node>
+    <node id="n53">
+      <name>属性赋值</name>
+      <desc/>
+    </node>
+    <node id="n54">
+      <name>对象属性的高级操作</name>
+      <desc/>
+    </node>
+    <node id="n55">
+      <name>get</name>
+      <desc/>
+    </node>
+    <node id="n56">
+      <name>set</name>
+      <desc/>
+    </node>
+    <node id="n57">
+      <name>可写性，可枚举性，可配置性定义</name>
+      <desc/>
+    </node>
+    <node id="n58">
+      <name>对象序列化</name>
+      <desc/>
+    </node>
+    <node id="n59">
+      <name>JSON概念</name>
+      <desc/>
+    </node>
+    <node id="n60">
+      <name>对象通用方法-从Object继承</name>
+      <desc/>
+    </node>
+    <node id="n61">
+      <name>数组</name>
+      <desc/>
+    </node>
+    <node id="n62">
+      <name>创建数组</name>
+      <desc/>
+    </node>
+    <node id="n63">
+      <name>数组长度</name>
+      <desc/>
+    </node>
+    <node id="n64">
+      <name>数组元素读写</name>
+      <desc/>
+    </node>
+    <node id="n65">
+      <name>数组元素增删</name>
+      <desc/>
+    </node>
+    <node id="n66">
+      <name>数组遍历</name>
+      <desc/>
+    </node>
+    <node id="n67">
+      <name>多维数组</name>
+      <desc/>
+    </node>
+    <node id="n68">
+      <name>数组基础方法</name>
+      <desc/>
+    </node>
+    <node id="n69">
+      <name>数组ES5高级方法</name>
+      <desc/>
+    </node>
+    <node id="n70">
+      <name>数组类型</name>
+      <desc/>
+    </node>
+    <node id="n71">
+      <name>数组操作</name>
+      <desc/>
+    </node>
+    <node id="n72">
+      <name>函数</name>
+      <desc/>
+    </node>
+    <node id="n73">
+      <name>函数的定义</name>
+      <desc/>
+    </node>
+    <node id="n74">
+      <name>函数的参数</name>
+      <desc/>
+    </node>
+    <node id="n75">
+      <name>函数的调用</name>
+      <desc/>
+    </node>
+    <node id="n76">
+      <name>作为值的函数</name>
+      <desc/>
+    </node>
+    <node id="n77">
+      <name>作为命名空间的函数</name>
+      <desc/>
+    </node>
+    <node id="n78">
+      <name>闭包</name>
+      <desc/>
+    </node>
+    <node id="n79">
+      <name>函数的属性，方法，构造函数</name>
+      <desc/>
+    </node>
+    <node id="n80">
+      <name>类与构造函数</name>
+      <desc/>
+    </node>
+    <node id="n81">
+      <name>类与原型</name>
+      <desc/>
+    </node>
+    <node id="n82">
+      <name>类的定义</name>
+      <desc/>
+    </node>
+    <node id="n83">
+      <name>类与类型</name>
+      <desc/>
+    </node>
+    <node id="n84">
+      <name>子类</name>
+      <desc/>
+    </node>
+    <node id="n85">
+      <name>类与对象</name>
+      <desc/>
+    </node>
+    <node id="n86">
+      <name>模块组织</name>
+      <desc/>
+    </node>
+    <node id="n87">
+      <name>ES5类相关概念</name>
+      <desc/>
+    </node>
+    <node id="n88">
+      <name>类的综合使用</name>
+      <desc/>
+    </node>
+    <node id="n89">
+      <name>正则表达式</name>
+      <desc/>
+    </node>
+    <node id="n90">
+      <name>模式匹配</name>
+      <desc/>
+    </node>
+    <node id="n91">
+      <name>RegExp对象</name>
+      <desc/>
+    </node>
+    <node id="n92">
+      <name>正则表达式高级技巧</name>
+      <desc/>
+    </node>
+  </nodes>
+  <relations>
+    <relation>
+      <parent node_id="n1"/>
+      <child node_id="n8"/>
+    </relation>
+    <relation>
+      <parent node_id="n2"/>
+      <child node_id="n8"/>
+    </relation>
+    <relation>
+      <parent node_id="n8"/>
+      <child node_id="n7"/>
+    </relation>
+    <relation>
+      <parent node_id="n5"/>
+      <child node_id="n7"/>
+    </relation>
+    <relation>
+      <parent node_id="n3"/>
+      <child node_id="n7"/>
+    </relation>
+    <relation>
+      <parent node_id="n4"/>
+      <child node_id="n7"/>
+    </relation>
+    <relation>
+      <parent node_id="n0"/>
+      <child node_id="n9"/>
+    </relation>
+    <relation>
+      <parent node_id="n9"/>
+      <child node_id="n10"/>
+    </relation>
+    <relation>
+      <parent node_id="n10"/>
+      <child node_id="n11"/>
+    </relation>
+    <relation>
+      <parent node_id="n12"/>
+      <child node_id="n11"/>
+    </relation>
+    <relation>
+      <parent node_id="n15"/>
+      <child node_id="n16"/>
+    </relation>
+    <relation>
+      <parent node_id="n19"/>
+      <child node_id="n20"/>
+    </relation>
+    <relation>
+      <parent node_id="n17"/>
+      <child node_id="n20"/>
+    </relation>
+    <relation>
+      <parent node_id="n16"/>
+      <child node_id="n20"/>
+    </relation>
+    <relation>
+      <parent node_id="n18"/>
+      <child node_id="n20"/>
+    </relation>
+    <relation>
+      <parent node_id="n13"/>
+      <child node_id="n20"/>
+    </relation>
+    <relation>
+      <parent node_id="n14"/>
+      <child node_id="n20"/>
+    </relation>
+    <relation>
+      <parent node_id="n20"/>
+      <child node_id="n6"/>
+    </relation>
+    <relation>
+      <parent node_id="n6"/>
+      <child node_id="n9"/>
+    </relation>
+    <relation>
+      <parent node_id="n7"/>
+      <child node_id="n9"/>
+    </relation>
+    <relation>
+      <parent node_id="n23"/>
+      <child node_id="n21"/>
+    </relation>
+    <relation>
+      <parent node_id="n24"/>
+      <child node_id="n21"/>
+    </relation>
+    <relation>
+      <parent node_id="n25"/>
+      <child node_id="n21"/>
+    </relation>
+    <relation>
+      <parent node_id="n22"/>
+      <child node_id="n21"/>
+    </relation>
+    <relation>
+      <parent node_id="n26"/>
+      <child node_id="n21"/>
+    </relation>
+    <relation>
+      <parent node_id="n28"/>
+      <child node_id="n27"/>
+    </relation>
+    <relation>
+      <parent node_id="n29"/>
+      <child node_id="n27"/>
+    </relation>
+    <relation>
+      <parent node_id="n20"/>
+      <child node_id="n30"/>
+    </relation>
+    <relation>
+      <parent node_id="n21"/>
+      <child node_id="n30"/>
+    </relation>
+    <relation>
+      <parent node_id="n27"/>
+      <child node_id="n30"/>
+    </relation>
+    <relation>
+      <parent node_id="n31"/>
+      <child node_id="n30"/>
+    </relation>
+    <relation>
+      <parent node_id="n33"/>
+      <child node_id="n31"/>
+    </relation>
+    <relation>
+      <parent node_id="n34"/>
+      <child node_id="n31"/>
+    </relation>
+    <relation>
+      <parent node_id="n35"/>
+      <child node_id="n31"/>
+    </relation>
+    <relation>
+      <parent node_id="n36"/>
+      <child node_id="n31"/>
+    </relation>
+    <relation>
+      <parent node_id="n38"/>
+      <child node_id="n35"/>
+    </relation>
+    <relation>
+      <parent node_id="n37"/>
+      <child node_id="n38"/>
+    </relation>
+    <relation>
+      <parent node_id="n39"/>
+      <child node_id="n38"/>
+    </relation>
+    <relation>
+      <parent node_id="n40"/>
+      <child node_id="n38"/>
+    </relation>
+    <relation>
+      <parent node_id="n41"/>
+      <child node_id="n38"/>
+    </relation>
+    <relation>
+      <parent node_id="n30"/>
+      <child node_id="n32"/>
+    </relation>
+    <relation>
+      <parent node_id="n42"/>
+      <child node_id="n32"/>
+    </relation>
+    <relation>
+      <parent node_id="n43"/>
+      <child node_id="n32"/>
+    </relation>
+    <relation>
+      <parent node_id="n44"/>
+      <child node_id="n32"/>
+    </relation>
+    <relation>
+      <parent node_id="n21"/>
+      <child node_id="n45"/>
+    </relation>
+    <relation>
+      <parent node_id="n27"/>
+      <child node_id="n46"/>
+    </relation>
+    <relation>
+      <parent node_id="n46"/>
+      <child node_id="n45"/>
+    </relation>
+    <relation>
+      <parent node_id="n47"/>
+      <child node_id="n46"/>
+    </relation>
+    <relation>
+      <parent node_id="n48"/>
+      <child node_id="n46"/>
+    </relation>
+    <relation>
+      <parent node_id="n49"/>
+      <child node_id="n48"/>
+    </relation>
+    <relation>
+      <parent node_id="n51"/>
+      <child node_id="n48"/>
+    </relation>
+    <relation>
+      <parent node_id="n50"/>
+      <child node_id="n48"/>
+    </relation>
+    <relation>
+      <parent node_id="n53"/>
+      <child node_id="n48"/>
+    </relation>
+    <relation>
+      <parent node_id="n52"/>
+      <child node_id="n48"/>
+    </relation>
+    <relation>
+      <parent node_id="n57"/>
+      <child node_id="n54"/>
+    </relation>
+    <relation>
+      <parent node_id="n55"/>
+      <child node_id="n54"/>
+    </relation>
+    <relation>
+      <parent node_id="n56"/>
+      <child node_id="n54"/>
+    </relation>
+    <relation>
+      <parent node_id="n54"/>
+      <child node_id="n46"/>
+    </relation>
+    <relation>
+      <parent node_id="n58"/>
+      <child node_id="n46"/>
+    </relation>
+    <relation>
+      <parent node_id="n59"/>
+      <child node_id="n58"/>
+    </relation>
+    <relation>
+      <parent node_id="n60"/>
+      <child node_id="n46"/>
+    </relation>
+    <relation>
+      <parent node_id="n62"/>
+      <child node_id="n63"/>
+    </relation>
+    <relation>
+      <parent node_id="n62"/>
+      <child node_id="n64"/>
+    </relation>
+    <relation>
+      <parent node_id="n64"/>
+      <child node_id="n65"/>
+    </relation>
+    <relation>
+      <parent node_id="n64"/>
+      <child node_id="n66"/>
+    </relation>
+    <relation>
+      <parent node_id="n64"/>
+      <child node_id="n67"/>
+    </relation>
+    <relation>
+      <parent node_id="n63"/>
+      <child node_id="n61"/>
+    </relation>
+    <relation>
+      <parent node_id="n66"/>
+      <child node_id="n61"/>
+    </relation>
+    <relation>
+      <parent node_id="n67"/>
+      <child node_id="n61"/>
+    </relation>
+    <relation>
+      <parent node_id="n65"/>
+      <child node_id="n61"/>
+    </relation>
+    <relation>
+      <parent node_id="n61"/>
+      <child node_id="n68"/>
+    </relation>
+    <relation>
+      <parent node_id="n61"/>
+      <child node_id="n69"/>
+    </relation>
+    <relation>
+      <parent node_id="n61"/>
+      <child node_id="n70"/>
+    </relation>
+    <relation>
+      <parent node_id="n70"/>
+      <child node_id="n71"/>
+    </relation>
+    <relation>
+      <parent node_id="n68"/>
+      <child node_id="n71"/>
+    </relation>
+    <relation>
+      <parent node_id="n69"/>
+      <child node_id="n71"/>
+    </relation>
+    <relation>
+      <parent node_id="n71"/>
+      <child node_id="n72"/>
+    </relation>
+    <relation>
+      <parent node_id="n32"/>
+      <child node_id="n72"/>
+    </relation>
+    <relation>
+      <parent node_id="n45"/>
+      <child node_id="n72"/>
+    </relation>
+    <relation>
+      <parent node_id="n72"/>
+      <child node_id="n73"/>
+    </relation>
+    <relation>
+      <parent node_id="n73"/>
+      <child node_id="n74"/>
+    </relation>
+    <relation>
+      <parent node_id="n74"/>
+      <child node_id="n75"/>
+    </relation>
+    <relation>
+      <parent node_id="n75"/>
+      <child node_id="n76"/>
+    </relation>
+    <relation>
+      <parent node_id="n76"/>
+      <child node_id="n78"/>
+    </relation>
+    <relation>
+      <parent node_id="n77"/>
+      <child node_id="n78"/>
+    </relation>
+    <relation>
+      <parent node_id="n76"/>
+      <child node_id="n79"/>
+    </relation>
+    <relation>
+      <parent node_id="n79"/>
+      <child node_id="n80"/>
+    </relation>
+    <relation>
+      <parent node_id="n45"/>
+      <child node_id="n81"/>
+    </relation>
+    <relation>
+      <parent node_id="n80"/>
+      <child node_id="n82"/>
+    </relation>
+    <relation>
+      <parent node_id="n81"/>
+      <child node_id="n82"/>
+    </relation>
+    <relation>
+      <parent node_id="n82"/>
+      <child node_id="n85"/>
+    </relation>
+    <relation>
+      <parent node_id="n85"/>
+      <child node_id="n86"/>
+    </relation>
+    <relation>
+      <parent node_id="n85"/>
+      <child node_id="n83"/>
+    </relation>
+    <relation>
+      <parent node_id="n85"/>
+      <child node_id="n84"/>
+    </relation>
+    <relation>
+      <parent node_id="n85"/>
+      <child node_id="n87"/>
+    </relation>
+    <relation>
+      <parent node_id="n87"/>
+      <child node_id="n88"/>
+    </relation>
+    <relation>
+      <parent node_id="n86"/>
+      <child node_id="n88"/>
+    </relation>
+    <relation>
+      <parent node_id="n83"/>
+      <child node_id="n88"/>
+    </relation>
+    <relation>
+      <parent node_id="n16"/>
+      <child node_id="n89"/>
+    </relation>
+    <relation>
+      <parent node_id="n72"/>
+      <child node_id="n89"/>
+    </relation>
+    <relation>
+      <parent node_id="n89"/>
+      <child node_id="n90"/>
+    </relation>
+    <relation>
+      <parent node_id="n89"/>
+      <child node_id="n91"/>
+    </relation>
+    <relation>
+      <parent node_id="n90"/>
+      <child node_id="n92"/>
+    </relation>
+    <relation>
+      <parent node_id="n91"/>
+      <child node_id="n92"/>
+    </relation>
+  </relations>
+</KnowledgeNet>
