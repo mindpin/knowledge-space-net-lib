@@ -40,6 +40,8 @@ class KnowledgeSpaceNet
 
   def save_to(file_path)
     path = File.join(KnowledgeSpaceNetLib::BASE_PATH, file_path)
+    dir = File.dirname(path)
+    FileUtils.mkdir_p(dir) if !File.exists?(dir)
     File.open(path,"w") do |f|
       f << to_xml()
     end
