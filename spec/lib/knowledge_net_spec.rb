@@ -23,4 +23,8 @@ describe KnowledgeNet do
   it 'find_node_by_id(node_id)' do
     knowledge_net.find_node_by_id('k2').name.should == 'xxx 3'
   end
+
+  it 'knowledge_net.id' do
+    knowledge_net.id.should == "kn1"
+  end
 end

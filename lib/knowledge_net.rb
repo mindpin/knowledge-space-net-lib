@@ -1,9 +1,11 @@
 require 'nokogiri'
 
 class KnowledgeNet
-  attr_accessor :knowledge_nodes
+  attr_accessor :knowledge_nodes, :id
 
   def initialize(doc)
+    @id = doc.at_css("KnowledgeNet").attr("id")
+
     hash = {}
     doc.css("nodes node").each do |node|
       id = node.attr("id")

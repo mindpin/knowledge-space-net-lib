@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<KnowledgeNet>
+<KnowledgeNet id="jsc">
   <nodes>
     <node id="n0">
       <name>字符集</name>
