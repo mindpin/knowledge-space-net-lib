@@ -12,4 +12,6 @@ Gem::Specification.new do |s|
 
   s.files = Dir.glob("lib/**/*") + %w(README.md)
   s.require_paths = ['lib']
+
+  s.add_dependency 'nokogiri'
 end
