@@ -1,15 +1,32 @@
 class KnowledgeNode
-  attr_accessor :id, :name, :desc, :parents, :children
+  attr_accessor :node_id, :name, :desc, :required, :set,
+                :parents, :children, :relations
 
-  def initialize(option={})
-    self.id = option[:id]
-    self.name = option[:name]
-    self.desc = option[:desc]
-    self.parents = []
-    self.children = []
+  def initialize(attrs)
+    @node_id  = attrs.delete :node_id
+    @set      = attrs.delete :set
+    @name     = attrs.delete :name
+    @required = attrs.delete :required
+    @desc     = attrs.delete :desc
+
+    @parents = []
+    @children = []
+    @relations = []
+
+    @set.add_node(self)
   end
 
-  def has_no_parents?
-    self.parents.count == 0
+  def is_root?
+    @parents.count == 0
+  end
+
+  def add_relation(relation)
+    @relations << relation
+
+    if relation.parent == self
+      @children << relation.child
+    elsif relation.child == self
+      @parents  << relation.parent
+    end
   end
 end

@@ -1,30 +1,51 @@
 require 'spec_helper'
 
 describe KnowledgeNet do
-  let(:path){"config/knowledge_nets/test/1.xml"}
-  let(:knowledge_net){KnowledgeNet.load_xml_file(path)}
+  before{
+    path = "config/knowledge_nets/test/1.xml"
+    @net = KnowledgeNet.load_xml_file(path)
+  }
 
-  it 'self.load_xml_file(file_path)' do
-    KnowledgeNet.load_xml_file(path).knowledge_nodes.count.should be 5
-  end
+  it{
+    @net.sets.count.should == 8
+    @net.checkpoints.count.should == 1
+    @net.root_sets.count.should == 1
+  }
 
-  it 'self.load_xml_file(file_path) 2 parents' do
-    KnowledgeNet.load_xml_file(path).knowledge_nodes[3].parents.size.should == 2
-  end
+  it{
+    set_8 = @net.find_set_by_id("set-8")
+    set_8.set_id.should == "set-8"
+    set_8.name.should == "基础: 值"
+    set_8.icon.should == "set-8"
+    set_8.deep.should == 1
+    set_8.nodes.count.should == 5
+    set_8.root_nodes.count.should == 1
+    set_8.parents.count.should == 0
+    set_8.children.count.should == 1
+    set_8.relations.count.should == 1
+  }
 
-  it 'self.load_xml_file(file_path) 3 children' do
-    KnowledgeNet.load_xml_file(path).knowledge_nodes[0].children.count.should be 2
-  end
+  it{
+    @net.checkpoints.count.should == 1
+    checkpoint = @net.checkpoints.first
+    checkpoint.checkpoint_id.should == "checkpoint-1"
+    checkpoint.learned_sets.count.should == 4
+    checkpoint.parents.count.should == 2
+    checkpoint.children.count.should == 1
+    checkpoint.relations.count.should == 3
+  }
 
-  it 'root_nodes' do
-    knowledge_net.root_nodes.first.id.should == 'k1'
-  end
+  it{
+    node_31 = @net.find_node_by_id("node-31")
+    node_31.node_id.should == "node-31"
+    node_31.name.should == "字符串"
+    node_31.required.should == true
+    node_31.desc.should == "怎样在程序里表示一个字符串"
+    node_31.set.set_id.should == "set-8"
+    node_31.children.count.should == 2
+    node_31.parents.count.should == 0
+    node_31.relations.count.should == 2
+    node_31.relations.first.parent == node_31
+  }
 
-  it 'find_node_by_id(node_id)' do
-    knowledge_net.find_node_by_id('k2').name.should == 'xxx 3'
-  end
-
-  it 'knowledge_net.id' do
-    knowledge_net.id.should == "kn1"
-  end
 end

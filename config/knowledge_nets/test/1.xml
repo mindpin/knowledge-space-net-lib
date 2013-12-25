@@ -1,59 +1,204 @@
-<KnowledgeNet id="kn1">
-  <nodes>
-    <node id="k1">
-      <name>xxx 1</name>
-      <desc>xxx 2</desc>
-    </node>
-
-    <node id="k2">
-      <name>xxx 3</name>
-      <desc>xxx 4</desc>
-    </node>
-
-    <node id="k3">
-      <name>xxx 5</name>
-      <desc>xxx 6</desc>
-    </node>
-
-    <node id="k4">
-      <name>xxx 5</name>
-      <desc>xxx 6</desc>
-    </node>
-
-    <node id="k5">
-      <name>xxx 5</name>
-      <desc>xxx 6</desc>
-    </node>
-  </nodes>
-
-  <relations>
-
-    <relation>
-      <parent node_id="k1"/>
-      <child node_id="k2"/>
-    </relation>
-
-    <relation>
-      <parent node_id="k1"/>
-      <child node_id="k3"/>
-    </relation>
-
-    <relation>
-      <parent node_id="k2"/>
-      <child node_id="k4"/>
-    </relation>
-
-    <relation>
-      <parent node_id="k3"/>
-      <child node_id="k4"/>
-    </relation>
-  </relations>
-</KnowledgeNet>
-
-
-
-
-
-
-
-
+<?xml version="1.0" encoding="UTF-8"?>
+<knowledge-field>
+    <sets>
+        <set id="set-1" name="基础: 变量" icon="set-1" deep="3">
+            <nodes>
+                <node id="node-1" name="变量的声明" required="true">
+                    <desc>怎样声明一个和多个变量</desc>
+                </node>
+                <node id="node-2" name="变量的赋值" required="true">
+                    <desc>怎样给变量赋值</desc>
+                </node>
+                <node id="node-3" name="变量命名规范" required="false">
+                    <desc>良好的变量命名方法</desc>
+                </node>
+                <node id="node-4" name="变量与运算" required="true">
+                    <desc>怎样使用变量进行计算</desc>
+                </node>
+                <node id="node-5" name="特殊值" required="true">
+                    <desc>特殊值 null 和 undefined 的含义和用途</desc>
+                </node>
+            </nodes>
+            <nodes-relations>
+                <parent-child parent="node-1" child="node-2"/>
+                <parent-child parent="node-1" child="node-3"/>
+                <parent-child parent="node-2" child="node-4"/>
+                <parent-child parent="node-4" child="node-5"/>
+            </nodes-relations>
+        </set>
+        <set id="set-2" name="基础: 运算符" icon="set-2" deep="2">
+            <nodes>
+                <node id="node-6" name="四则运算符" required="true">
+                    <desc>怎样进行简单的加减乘除</desc>
+                </node>
+                <node id="node-7" name="括号" required="true">
+                    <desc>表达式里的括号对运算顺序的影响</desc>
+                </node>
+                <node id="node-8" name="大小比较 (&amp;gt; &amp;lt; ==)" required="true">
+                    <desc>怎样比较值的大小</desc>
+                </node>
+                <node id="node-9" name="赋值" required="true">
+                    <desc>把值赋给一个变量，使用变量</desc>
+                </node>
+            </nodes>
+            <nodes-relations>
+                <parent-child parent="node-6" child="node-7"/>
+                <parent-child parent="node-7" child="node-8"/>
+                <parent-child parent="node-8" child="node-9"/>
+            </nodes-relations>
+        </set>
+        <set id="set-3" name="基础: 语句" icon="set-3" deep="3">
+            <nodes>
+                <node id="node-10" name="alert" required="true">
+                    <desc>alert方法的用法</desc>
+                </node>
+                <node id="node-11" name="注释" required="true">
+                    <desc>在程序中使用注释</desc>
+                </node>
+                <node id="node-12" name="注释风格" required="false">
+                    <desc>比较可取的注释写法</desc>
+                </node>
+                <node id="node-13" name="分号" required="true">
+                    <desc>语句末尾的分号</desc>
+                </node>
+                <node id="node-14" name="confirm, prompt" required="true">
+                    <desc>confirm和prompt方法的用法</desc>
+                </node>
+            </nodes>
+            <nodes-relations>
+                <parent-child parent="node-10" child="node-11"/>
+                <parent-child parent="node-10" child="node-14"/>
+                <parent-child parent="node-11" child="node-13"/>
+                <parent-child parent="node-11" child="node-12"/>
+            </nodes-relations>
+        </set>
+        <set id="set-4" name="选择结构" icon="set-4" deep="5">
+            <nodes>
+                <node id="node-15" name="逻辑运算符" required="true">
+                    <desc>&amp; || 等逻辑运算符</desc>
+                </node>
+                <node id="node-16" name="if" required="true">
+                    <desc>if语句和选择结构</desc>
+                </node>
+                <node id="node-17" name="三元条件运算符" required="true">
+                    <desc>? : 简捷的分支结构</desc>
+                </node>
+                <node id="node-18" name="else" required="true">
+                    <desc>else语句和分支结构</desc>
+                </node>
+            </nodes>
+            <nodes-relations>
+                <parent-child parent="node-15" child="node-16"/>
+                <parent-child parent="node-16" child="node-18"/>
+                <parent-child parent="node-18" child="node-17"/>
+            </nodes-relations>
+        </set>
+        <set id="set-5" name="循环结构" icon="set-5" deep="6">
+            <nodes>
+                <node id="node-19" name="for" required="true">
+                    <desc>for 语句和循环结构</desc>
+                </node>
+                <node id="node-20" name="while" required="true">
+                    <desc>while 语句和循环结构</desc>
+                </node>
+                <node id="node-21" name="数组" required="true">
+                    <desc>数组的定义和表示方法</desc>
+                </node>
+                <node id="node-22" name="数组的遍历" required="true">
+                    <desc>使用循环来遍历数组</desc>
+                </node>
+            </nodes>
+            <nodes-relations>
+                <parent-child parent="node-19" child="node-21"/>
+                <parent-child parent="node-20" child="node-19"/>
+                <parent-child parent="node-21" child="node-22"/>
+            </nodes-relations>
+        </set>
+        <set id="set-6" name="对象 1" icon="set-6" deep="6">
+            <nodes>
+                <node id="node-23" name="一般对象" required="true">
+                    <desc>一般对象的定义和表示方法</desc>
+                </node>
+                <node id="node-24" name="对象与变量" required="true">
+                    <desc>在对象定义中使用变量</desc>
+                </node>
+                <node id="node-25" name="命名函数" required="true">
+                    <desc>定义和使用命名函数</desc>
+                </node>
+            </nodes>
+            <nodes-relations>
+                <parent-child parent="node-23" child="node-24"/>
+                <parent-child parent="node-24" child="node-25"/>
+            </nodes-relations>
+        </set>
+        <set id="set-7" name="对象 2" icon="set-7" deep="7">
+            <nodes>
+                <node id="node-26" name="对象属性取值" required="true">
+                    <desc>获取对象属性的值</desc>
+                </node>
+                <node id="node-27" name="对象属性赋值" required="true">
+                    <desc>设置和修改对象属性的值</desc>
+                </node>
+                <node id="node-28" name="对象属性的删除" required="true">
+                    <desc>delete, 怎样删除对象的属性</desc>
+                </node>
+                <node id="node-29" name="对象属性的检测" required="true">
+                    <desc>怎样检测对象的属性</desc>
+                </node>
+                <node id="node-30" name="对象属性的遍历" required="true">
+                    <desc>怎样遍历一个对象的属性</desc>
+                </node>
+            </nodes>
+            <nodes-relations>
+                <parent-child parent="node-26" child="node-27"/>
+                <parent-child parent="node-27" child="node-28"/>
+                <parent-child parent="node-28" child="node-29"/>
+                <parent-child parent="node-29" child="node-30"/>
+            </nodes-relations>
+        </set>
+        <set id="set-8" name="基础: 值" icon="set-8" deep="1">
+            <nodes>
+                <node id="node-31" name="字符串" required="true">
+                    <desc>怎样在程序里表示一个字符串</desc>
+                </node>
+                <node id="node-32" name="整数" required="true">
+                    <desc>怎样在程序里表示一个整数</desc>
+                </node>
+                <node id="node-33" name="小数" required="true">
+                    <desc>怎样在程序里表示一个小数（浮点数）</desc>
+                </node>
+                <node id="node-34" name="布尔值" required="true">
+                    <desc>怎样在程序里表示一个布尔值</desc>
+                </node>
+                <node id="node-35" name="转义字符" required="false">
+                    <desc>字符串里的一类特殊字符的表示方法</desc>
+                </node>
+            </nodes>
+            <nodes-relations>
+                <parent-child parent="node-31" child="node-32"/>
+                <parent-child parent="node-31" child="node-35"/>
+                <parent-child parent="node-32" child="node-33"/>
+                <parent-child parent="node-33" child="node-34"/>
+            </nodes-relations>
+        </set>
+    </sets>
+    <checkpoints>
+        <checkpoint id="checkpoint-1" deep="4">
+            <learned target="set-1"/>
+            <learned target="set-2"/>
+            <learned target="set-8"/>
+            <learned target="set-3"/>
+        </checkpoint>
+    </checkpoints>
+    <relations>
+        <parent-child parent="set-1" child="checkpoint-1"/>
+        <parent-child parent="set-2" child="set-3"/>
+        <parent-child parent="set-2" child="set-1"/>
+        <parent-child parent="set-3" child="checkpoint-1"/>
+        <parent-child parent="set-4" child="set-5"/>
+        <parent-child parent="set-4" child="set-6"/>
+        <parent-child parent="set-6" child="set-7"/>
+        <parent-child parent="set-8" child="set-2"/>
+        <parent-child parent="checkpoint-1" child="set-4"/>
+    </relations>
+</knowledge-field>
