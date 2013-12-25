@@ -140,7 +140,7 @@ describe KnowledgeSpaceParser do
   end
 
   describe 'parse-lifei-example' do
-    let(:path){ "config/knowledge_nets/test_2.xml" }
+    let(:path){ "config/knowledge_nets/test/2.xml" }
     let(:knowledge_net){ KnowledgeNet.load_xml_file(path) }
     let(:knowledge_space_net) {
       KnowledgeSpaceParser.new(knowledge_net).parse

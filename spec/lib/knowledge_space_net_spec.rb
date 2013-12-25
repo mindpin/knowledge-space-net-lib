@@ -4,8 +4,8 @@ describe KnowledgeSpaceNet do
 
   describe 'load' do
     before do
-      knowledge_net_xml = "config/knowledge_nets/test_2.xml"
-      knowledge_space_net_xml = "config/knowledge_space_nets/test_2.xml"
+      knowledge_net_xml = "config/knowledge_nets/test/2.xml"
+      knowledge_space_net_xml = "config/knowledge_space_nets/test/2.xml"
       @knowledge_net = KnowledgeNet.load_xml_file(knowledge_net_xml)
       @knowledge_space_net = KnowledgeSpaceParser.load(@knowledge_net, knowledge_space_net_xml)
       @sapce_nodes = @knowledge_space_net.knowledge_space_nodes
@@ -93,8 +93,8 @@ describe KnowledgeSpaceNet do
 
   describe "save_to" do
     before do
-      knowledge_net_xml = "config/knowledge_nets/test_2.xml"
-      knowledge_space_net_xml = "config/knowledge_space_nets/test_2.xml"
+      knowledge_net_xml = "config/knowledge_nets/test/2.xml"
+      knowledge_space_net_xml = "config/knowledge_space_nets/test/2.xml"
       @knowledge_net = KnowledgeNet.load_xml_file(knowledge_net_xml)
       @knowledge_space_net = KnowledgeSpaceParser.load(@knowledge_net, knowledge_space_net_xml)
     end
@@ -106,7 +106,7 @@ describe KnowledgeSpaceNet do
 
   describe 'parse' do
     before do
-      knowledge_net_xml = "config/knowledge_nets/test_2.xml"
+      knowledge_net_xml = "config/knowledge_nets/test/2.xml"
       @knowledge_net = KnowledgeNet.load_xml_file(knowledge_net_xml)
       @knowledge_space_net = KnowledgeSpaceNet.new(@knowledge_net)
     end

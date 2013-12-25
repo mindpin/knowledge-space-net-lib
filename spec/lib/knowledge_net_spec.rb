@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe KnowledgeNet do
-  let(:path){"config/knowledge_nets/1.xml"}
+  let(:path){"config/knowledge_nets/test/1.xml"}
   let(:knowledge_net){KnowledgeNet.load_xml_file(path)}
 
   it 'self.load_xml_file(file_path)' do
