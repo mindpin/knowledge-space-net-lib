@@ -111,12 +111,6 @@ class KnowledgeNet
     @node_hash[node_id]
   end
 
-  def self.load_xml_file(file_path)
-    path = File.join(KnowledgeSpaceNetLib::BASE_PATH, file_path)
-    doc = Nokogiri::XML(File.open(path))
-    KnowledgeNet.new(doc)
-  end
-
   def root_sets
     kns = []
     self.sets.each do |v|
@@ -125,9 +119,25 @@ class KnowledgeNet
     kns
   end
 
-  # def find_node_by_id(node_id)
-  #   self.knowledge_nodes.each do |v|
-  #     return v if v.id == node_id
-  #   end
-  # end
+  def self.load_xml_file(file_path)
+    path = File.join(KnowledgeSpaceNetLib::BASE_PATH, file_path)
+    doc = Nokogiri::XML(File.open(path))
+    KnowledgeNet.new(doc)
+  end
+
+  def self.find_set_by_id(set_id)
+    KnowledgeNet::JAVASCRIPT_CORE.find_set_by_id(set_id)
+  end
+
+  def self.find_checkpoint_by_id(checkpoint_id)
+    KnowledgeNet::JAVASCRIPT_CORE.find_checkpoint_by_id(checkpoint_id)
+  end
+
+  def self.find_node_by_id(node_id)
+    KnowledgeNet::JAVASCRIPT_CORE.find_node_by_id(node_id)
+  end
+
+  def self.all
+    [KnowledgeNet::JAVASCRIPT_CORE]
+  end
 end

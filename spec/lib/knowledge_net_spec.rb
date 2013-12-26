@@ -48,4 +48,11 @@ describe KnowledgeNet do
     node_31.relations.first.parent == node_31
   }
 
+  it{
+    KnowledgeNet.all.first.class.should == KnowledgeNet
+    KnowledgeNet.find_set_by_id("set-8").set_id.should == "set-8"
+    KnowledgeNet.find_checkpoint_by_id("checkpoint-1").checkpoint_id.should == "checkpoint-1"
+    KnowledgeNet.find_node_by_id("node-31").node_id.should == "node-31"
+  }
+
 end
