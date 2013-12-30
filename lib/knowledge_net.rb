@@ -125,19 +125,13 @@ class KnowledgeNet
     KnowledgeNet.new(doc)
   end
 
-  def self.find_set_by_id(set_id)
-    KnowledgeNet::JAVASCRIPT_CORE.find_set_by_id(set_id)
-  end
-
-  def self.find_checkpoint_by_id(checkpoint_id)
-    KnowledgeNet::JAVASCRIPT_CORE.find_checkpoint_by_id(checkpoint_id)
-  end
-
-  def self.find_node_by_id(node_id)
-    KnowledgeNet::JAVASCRIPT_CORE.find_node_by_id(node_id)
-  end
-
   def self.all
-    [KnowledgeNet::JAVASCRIPT_CORE]
+    KnowledgeSpaceNetLib::DATA.values
   end
+
+  def self.get_by_name(name)
+    KnowledgeSpaceNetLib::DATA[name]
+  end
+
+
 end
