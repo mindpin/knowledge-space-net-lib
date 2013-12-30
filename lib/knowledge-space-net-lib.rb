@@ -15,6 +15,6 @@ require 'fileutils'
 module KnowledgeSpaceNetLib
   BASE_PATH = File.expand_path("../../",__FILE__)
   DATA = {
-    "javascript" => KnowledgeNet.load_xml_file("config/knowledge_nets/javascript_core.xml")
+    "javascript" => KnowledgeNet.load_xml_file("config/knowledge_nets/javascript.xml")
   }
 end

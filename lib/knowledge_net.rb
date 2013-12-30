@@ -1,9 +1,10 @@
 require 'nokogiri'
 
 class KnowledgeNet
-  attr_accessor :sets, :checkpoints
+  attr_accessor :name, :sets, :checkpoints
 
-  def initialize(doc)
+  def initialize(doc, name)
+    @name = name
     @doc = doc
     @id = doc.at_css("knowledge-field").attr("id")
     @set_hash = {}
@@ -122,7 +123,8 @@ class KnowledgeNet
   def self.load_xml_file(file_path)
     path = File.join(KnowledgeSpaceNetLib::BASE_PATH, file_path)
     doc = Nokogiri::XML(File.open(path))
-    KnowledgeNet.new(doc)
+    name = File.basename(path,".xml")
+    KnowledgeNet.new(doc, name)
   end
 
   def self.all

@@ -7,6 +7,7 @@ describe KnowledgeNet do
   }
 
   it{
+    @net.name.should == "1"
     @net.sets.count.should == 8
     @net.checkpoints.count.should == 1
     @net.root_sets.count.should == 1
@@ -50,6 +51,7 @@ describe KnowledgeNet do
 
   it{
     net = KnowledgeNet.get_by_name("javascript")
+    net.name.should == "javascript"
     net.class.should == KnowledgeNet
     net.find_set_by_id("set-8").set_id.should == "set-8"
     net.find_checkpoint_by_id("checkpoint-1").checkpoint_id.should == "checkpoint-1"
