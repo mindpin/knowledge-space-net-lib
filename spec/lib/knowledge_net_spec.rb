@@ -2,12 +2,11 @@ require 'spec_helper'
 
 describe KnowledgeNet do
   before{
-    path = "config/knowledge_nets/test/1.xml"
-    @net = KnowledgeNet.load_xml_file(path)
+    @net = KnowledgeNet.get_by_name("test1")
   }
 
   it{
-    @net.name.should == "1"
+    @net.name.should == "test1"
     @net.sets.count.should == 8
     @net.checkpoints.count.should == 1
     @net.root_sets.count.should == 1
