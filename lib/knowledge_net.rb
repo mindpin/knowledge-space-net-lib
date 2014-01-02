@@ -64,9 +64,7 @@ class KnowledgeNet
   def _add_relation(params)
     parent = find_set_by_id(params[:parent]) || find_checkpoint_by_id(params[:parent])
     child  = find_set_by_id(params[:child]) || find_checkpoint_by_id(params[:child])
-    relation = KnowledgeRelation.new(parent, child)
-    parent.add_relation(relation)
-    child.add_relation(relation)
+    parent.add_child(child)
   end
 
   def _build_nodes(set, set_dom)
@@ -95,9 +93,7 @@ class KnowledgeNet
   def _add_node_relation(params)
     parent = find_node_by_id(params[:parent])
     child = find_node_by_id(params[:child])
-    relation = KnowledgeNodeRelation.new(parent, child)
-    parent.add_relation(relation)
-    child.add_relation(relation)
+    parent.add_child(child)
   end
 
   def find_set_by_id(set_id)

@@ -1,19 +1,13 @@
 class BaseKnowledgeSet
-  attr_accessor :parents, :children, :relations
+  attr_accessor :parents, :children
   def initialize(attrs)
-    @relations = []
     @children  = []
     @parents   = []
   end
 
-  def add_relation(relation)
-    @relations << relation
-
-    if relation.parent == self
-      @children << relation.child
-    elsif relation.child == self
-      @parents  << relation.parent
-    end
+  def add_child(child)
+    @children << child
+    child.parents << self
   end
 
   def is_root?

@@ -22,7 +22,6 @@ describe KnowledgeNet do
     set_8.root_nodes.count.should == 1
     set_8.parents.count.should == 0
     set_8.children.count.should == 1
-    set_8.relations.count.should == 1
   }
 
   it{
@@ -32,7 +31,6 @@ describe KnowledgeNet do
     checkpoint.learned_sets.count.should == 4
     checkpoint.parents.count.should == 2
     checkpoint.children.count.should == 1
-    checkpoint.relations.count.should == 3
   }
 
   it{
@@ -44,8 +42,7 @@ describe KnowledgeNet do
     node_31.set.set_id.should == "set-8"
     node_31.children.count.should == 2
     node_31.parents.count.should == 0
-    node_31.relations.count.should == 2
-    node_31.relations.first.parent == node_31
+    node_31.children.first.parents.first == node_31
   }
 
   it{

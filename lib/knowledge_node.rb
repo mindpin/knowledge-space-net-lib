@@ -1,6 +1,6 @@
 class KnowledgeNode
   attr_accessor :node_id, :name, :desc, :required, :set,
-                :parents, :children, :relations
+                :parents, :children
 
   def initialize(attrs)
     @node_id  = attrs.delete :node_id
@@ -11,7 +11,6 @@ class KnowledgeNode
 
     @parents = []
     @children = []
-    @relations = []
 
     @set.add_node(self)
   end
@@ -20,13 +19,9 @@ class KnowledgeNode
     @parents.count == 0
   end
 
-  def add_relation(relation)
-    @relations << relation
-
-    if relation.parent == self
-      @children << relation.child
-    elsif relation.child == self
-      @parents  << relation.parent
-    end
+  def add_child(child)
+    @children << child
+    child.parents << self
   end
+
 end
