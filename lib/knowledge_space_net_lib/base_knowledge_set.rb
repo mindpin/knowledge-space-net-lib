@@ -1,18 +1,31 @@
 module KnowledgeSpaceNetLib
   class BaseKnowledgeSet
-    attr_accessor :parents, :children
+    attr_accessor :parent_ids, :child_ids
     def initialize(attrs)
-      @children  = []
-      @parents   = []
+      @parent_ids  = []
+      @child_ids   = []
     end
 
     def add_child(child)
-      @children << child
-      child.parents << self
+      @child_ids << child.id
+      child.parent_ids << self.id
     end
 
     def is_root?
-      @parents.count == 0
+      @parent_ids.count == 0
     end
+
+    def parents
+      @parent_ids.map do |id|
+        @net.find_set_or_checkpoint_by_id(id)
+      end
+    end
+
+    def children
+      @child_ids.map do |id|
+        @net.find_set_or_checkpoint_by_id(id)
+      end
+    end
+
   end
 end

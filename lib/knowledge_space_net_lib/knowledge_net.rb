@@ -25,12 +25,13 @@ module KnowledgeSpaceNetLib
     def _build_sets
       @doc.css("sets set").each do |set_dom|
         set = KnowledgeSet.new(
-          :set_id => set_dom.attr("id"),
+          :net    => self,
+          :id     => set_dom.attr("id"),
           :name   => set_dom.attr("name"),
           :icon   => set_dom.attr("icon"),
           :deep   => set_dom.attr("deep").to_i
         )
-        @set_hash[set.set_id] = set
+        @set_hash[set.id] = set
         @sets << set
 
         _build_nodes(set, set_dom)
@@ -40,15 +41,16 @@ module KnowledgeSpaceNetLib
 
     def _build_checkpoints
       @doc.css("checkpoints checkpoint").each do |checkpoint_dom|
-        learned_sets = checkpoint_dom.css("learned").map do |dom|
-          find_set_by_id(dom.attr("target"))
+        learned_set_ids = checkpoint_dom.css("learned").map do |dom|
+          dom.attr("target")
         end
         checkpoint = KnowledgeCheckpoint.new(
-          :checkpoint_id => checkpoint_dom.attr("id"),
+          :net           => self,
+          :id            => checkpoint_dom.attr("id"),
           :deep          => checkpoint_dom.attr("deep"),
-          :learned_sets  => learned_sets
+          :learned_set_ids  => learned_set_ids
         )
-        @checkpoint_hash[checkpoint.checkpoint_id] = checkpoint
+        @checkpoint_hash[checkpoint.id] = checkpoint
         @checkpoints << checkpoint
       end
     end
@@ -71,13 +73,15 @@ module KnowledgeSpaceNetLib
     def _build_nodes(set, set_dom)
       set_dom.css("nodes node").each do |node_dom|
         node = KnowledgeNode.new(
-          :set      => set,
-          :node_id  => node_dom.attr("id"),
+          :net      => self,
+          :set_id   => set.id,
+          :id       => node_dom.attr("id"),
           :name     => node_dom.attr("name"),
           :required => node_dom.attr("required") == "true",
           :desc     => node_dom.at_css("desc").text
         )
-        @node_hash[node.node_id] = node
+        set.add_node(node)
+        @node_hash[node.id] = node
         @nodes << node
       end
     end
@@ -107,6 +111,10 @@ module KnowledgeSpaceNetLib
 
     def find_node_by_id(node_id)
       @node_hash[node_id]
+    end
+
+    def find_set_or_checkpoint_by_id(id)
+      find_set_by_id(id) || find_checkpoint_by_id(id)
     end
 
     def root_sets

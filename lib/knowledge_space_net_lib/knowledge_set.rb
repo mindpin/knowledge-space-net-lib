@@ -1,23 +1,30 @@
 module KnowledgeSpaceNetLib
   class KnowledgeSet < BaseKnowledgeSet
-    attr_accessor :set_id, :name, :icon, :deep, :nodes
+    attr_accessor :id, :name, :icon, :deep
 
     def initialize(attrs)
-      @set_id = attrs.delete :set_id
+      @net  = attrs.delete :net
+      @id = attrs.delete :id
       @name = attrs.delete :name
       @icon = attrs.delete :icon
       @deep = attrs.delete :deep
-      @nodes = []
+      @node_ids = []
       super
     end
 
     def add_node(node)
-      @nodes << node
+      @node_ids << node.id
+    end
+
+    def nodes
+      @node_ids.map do |id|
+        @net.find_node_by_id(id)
+      end
     end
 
     def root_nodes
       kns = []
-      @nodes.each do |v|
+      nodes.each do |v|
         kns << v if v.is_root?
       end
       kns

@@ -1,13 +1,20 @@
 module KnowledgeSpaceNetLib
   class KnowledgeCheckpoint < BaseKnowledgeSet
-    attr_accessor :checkpoint_id, :deep, :learned_sets
+    attr_accessor :id, :deep
 
     def initialize(attrs)
-      @checkpoint_id = attrs.delete :checkpoint_id
+      @net           = attrs.delete :net
+      @id            = attrs.delete :id
       @deep          = attrs.delete :deep
-      @learned_sets  = attrs.delete :learned_sets
+      @learned_set_ids  = attrs.delete :learned_set_ids
 
       super
+    end
+
+    def learned_sets
+      @learned_set_ids.map do |id|
+        @net.find_set_by_id(id)
+      end
     end
 
   end
