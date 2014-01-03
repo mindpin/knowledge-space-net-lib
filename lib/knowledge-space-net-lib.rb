@@ -1,8 +1,5 @@
 require 'knowledge_net'
 require 'knowledge_node'
-require 'knowledge_space_net'
-require 'knowledge_space_node'
-require 'knowledge_space_parser'
 require 'base_knowledge_set'
 require 'knowledge_set'
 require 'knowledge_checkpoint'
