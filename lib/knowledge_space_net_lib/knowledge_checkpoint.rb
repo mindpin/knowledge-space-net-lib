@@ -1,6 +1,6 @@
 module KnowledgeSpaceNetLib
   class KnowledgeCheckpoint < BaseKnowledgeSet
-    attr_accessor :id, :deep
+    attr_accessor :net, :id, :deep
 
     def initialize(attrs)
       @net           = attrs.delete :net

@@ -1,6 +1,6 @@
 module KnowledgeSpaceNetLib
   class KnowledgeSet < BaseKnowledgeSet
-    attr_accessor :id, :name, :icon, :deep
+    attr_accessor :net, :id, :name, :icon, :deep
 
     def initialize(attrs)
       @net  = attrs.delete :net

@@ -1,6 +1,6 @@
 module KnowledgeSpaceNetLib
   class KnowledgeNode
-    attr_accessor :id, :name, :desc, :required,
+    attr_accessor :net, :id, :name, :desc, :required,
                   :parent_ids, :child_ids
 
     def initialize(attrs)
