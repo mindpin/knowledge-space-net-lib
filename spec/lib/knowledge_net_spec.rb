@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe KnowledgeNet do
+describe KnowledgeSpaceNetLib::KnowledgeNet do
   before{
-    @net = KnowledgeNet.get_by_name("test1")
+    @net = KnowledgeSpaceNetLib::KnowledgeNet.get_by_name("test1")
   }
 
   it{
@@ -46,9 +46,9 @@ describe KnowledgeNet do
   }
 
   it{
-    net = KnowledgeNet.get_by_name("javascript")
+    net = KnowledgeSpaceNetLib::KnowledgeNet.get_by_name("javascript")
     net.name.should == "javascript"
-    net.class.should == KnowledgeNet
+    net.class.should == KnowledgeSpaceNetLib::KnowledgeNet
     net.find_set_by_id("set-8").set_id.should == "set-8"
     net.find_checkpoint_by_id("checkpoint-1").checkpoint_id.should == "checkpoint-1"
     net.find_node_by_id("node-31").node_id.should == "node-31"
