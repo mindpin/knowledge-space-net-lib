@@ -2,12 +2,12 @@ require 'nokogiri'
 
 module KnowledgeSpaceNetLib
   class KnowledgeNet
-    attr_accessor :name, :sets, :checkpoints
+    attr_accessor :id, :name, :sets, :checkpoints
 
-    def initialize(doc, name)
+    def initialize(doc, id, name)
+      @id   = id
       @name = name
       @doc = doc
-      @id = doc.at_css("knowledge-field").attr("id")
       @set_hash = {}
       @node_hash = {}
       @checkpoint_hash = {}
@@ -125,18 +125,18 @@ module KnowledgeSpaceNetLib
       kns
     end
 
-    def self.load_xml_file(file_path)
+    def self.load_xml_file(file_path, name)
       path = File.join(KnowledgeSpaceNetLib::BASE_PATH, file_path)
       doc = Nokogiri::XML(File.open(path))
-      name = File.basename(path,".xml")
-      KnowledgeNet.new(doc, name)
+      id = File.basename(path,".xml")
+      KnowledgeNet.new(doc, id, name)
     end
 
     def self.all
       KnowledgeSpaceNetLib::DATA.values
     end
 
-    def self.get_by_name(name)
+    def self.find(name)
       KnowledgeSpaceNetLib::DATA[name]
     end
 

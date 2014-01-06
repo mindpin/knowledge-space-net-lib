@@ -2,11 +2,12 @@ require 'spec_helper'
 
 describe KnowledgeSpaceNetLib::KnowledgeNet do
   before{
-    @net = KnowledgeSpaceNetLib::KnowledgeNet.get_by_name("test1")
+    @net = KnowledgeSpaceNetLib::KnowledgeNet.find("test1")
   }
 
   it{
-    @net.name.should == "test1"
+    @net.id.should == "test1"
+    @net.name.should == "测试1"
     @net.sets.count.should == 8
     @net.checkpoints.count.should == 1
     @net.root_sets.count.should == 1
@@ -60,7 +61,8 @@ describe KnowledgeSpaceNetLib::KnowledgeNet do
   }
 
   it{
-    net = KnowledgeSpaceNetLib::KnowledgeNet.get_by_name("javascript")
+    net = KnowledgeSpaceNetLib::KnowledgeNet.find("javascript")
+    net.name.should == "javascript"
     net.name.should == "javascript"
     net.class.should == KnowledgeSpaceNetLib::KnowledgeNet
     net.find_set_by_id("set-8").id.should == "set-8"
