@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe KnowledgeSpaceNetLib::KnowledgeNet do
   before{
-    @net = KnowledgeSpaceNetLib::KnowledgeNet.find("test1")
+    @net = KnowledgeSpaceNetLib::KnowledgeNet.test1_instance
   }
 
   it{
