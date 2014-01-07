@@ -144,8 +144,5 @@ module KnowledgeSpaceNetLib
       KnowledgeSpaceNetLib::DATA[name]
     end
 
-    def self.test1_instance
-      return KnowledgeNet.load_xml_file("config/knowledge_nets/test1.xml","测试1")
-    end
   end
 end

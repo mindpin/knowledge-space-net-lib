@@ -6,4 +6,9 @@ Coveralls.wear!
 
 require 'nokogiri'
 
+class Rails
+  def self.env
+    "test"
+  end
+end
 require 'knowledge-space-net-lib'
