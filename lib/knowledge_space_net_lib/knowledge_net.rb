@@ -2,7 +2,7 @@ require 'nokogiri'
 
 module KnowledgeSpaceNetLib
   class KnowledgeNet
-    attr_accessor :id, :name, :sets, :checkpoints
+    attr_accessor :id, :name, :sets, :checkpoints, :relations
 
     def initialize(doc, id, name)
       @id   = id
@@ -14,12 +14,13 @@ module KnowledgeSpaceNetLib
 
       @sets = []
       @checkpoints = []
+      @relations = []
       @nodes = []
 
 
       _build_sets()
       _build_checkpoints()
-      _build_set_and_checkpoint_relation()
+      _build_base_set_relation()
     end
 
     def _build_sets
@@ -55,7 +56,7 @@ module KnowledgeSpaceNetLib
       end
     end
 
-    def _build_set_and_checkpoint_relation
+    def _build_base_set_relation
       @doc.css("relations parent-child").each do |relation_dom|
         _add_relation(
           :parent => relation_dom.attr("parent"),
@@ -68,6 +69,7 @@ module KnowledgeSpaceNetLib
       parent = find_set_by_id(params[:parent]) || find_checkpoint_by_id(params[:parent])
       child  = find_set_by_id(params[:child]) || find_checkpoint_by_id(params[:child])
       parent.add_child(child)
+      @relations << BaseKnowledgeSetRelation.new(:parent => parent, :child => child)
     end
 
     def _build_nodes(set, set_dom)
@@ -89,16 +91,18 @@ module KnowledgeSpaceNetLib
     def _build_node_relations(set, set_dom)
       set_dom.css("nodes-relations parent-child").each do |relation_dom|
         _add_node_relation(
+          set,
           :parent => relation_dom.attr("parent"),
           :child  => relation_dom.attr("child")
         )
       end
     end
 
-    def _add_node_relation(params)
+    def _add_node_relation(set, params)
       parent = find_node_by_id(params[:parent])
       child = find_node_by_id(params[:child])
       parent.add_child(child)
+      set.add_relation(BaseKnowledgeNodeRelation.new(:parent => parent, :child => child))
     end
 
     def find_set_by_id(set_id)

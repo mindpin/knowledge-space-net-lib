@@ -1,6 +1,6 @@
 module KnowledgeSpaceNetLib
   class KnowledgeSet < BaseKnowledgeSet
-    attr_accessor :net, :id, :name, :icon, :deep
+    attr_accessor :net, :id, :name, :icon, :deep, :relations
 
     def initialize(attrs)
       @net  = attrs.delete :net
@@ -9,11 +9,16 @@ module KnowledgeSpaceNetLib
       @icon = attrs.delete :icon
       @deep = attrs.delete :deep
       @node_ids = []
+      @relations = []
       super
     end
 
     def add_node(node)
       @node_ids << node.id
+    end
+
+    def add_relation(relation)
+      @relations << relation
     end
 
     def nodes

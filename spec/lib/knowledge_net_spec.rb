@@ -6,6 +6,11 @@ describe KnowledgeSpaceNetLib::KnowledgeNet do
   }
 
   it{
+    @net.relations.count.should == 9
+    @net.relations.first.class.should == KnowledgeSpaceNetLib::BaseKnowledgeSetRelation
+  }
+
+  it{
     @net.id.should == "test1"
     @net.name.should == "测试1"
     @net.sets.count.should == 8
@@ -15,6 +20,12 @@ describe KnowledgeSpaceNetLib::KnowledgeNet do
     @net.sets.first.class.should == KnowledgeSpaceNetLib::KnowledgeSet
     @net.checkpoints.first.class.should == KnowledgeSpaceNetLib::KnowledgeCheckpoint
     @net.root_sets.first.class.should == KnowledgeSpaceNetLib::KnowledgeSet
+  }
+
+  it{
+    set = @net.find_set_by_id("set-8")
+    set.relations.count.should == 4
+    set.relations.first.class.should == KnowledgeSpaceNetLib::BaseKnowledgeNodeRelation
   }
 
   it{
