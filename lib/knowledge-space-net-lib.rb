@@ -18,7 +18,7 @@ module KnowledgeSpaceNetLib
     }    
   else
     DATA = {
-      "javascript" => KnowledgeNet.load_xml_file("config/knowledge_nets/javascript.xml", "JavaScript")
+      "javascript" => KnowledgeNet.load_xml_file("config/knowledge_nets/javascript.xml", "JavaScript"),
       "english"    => KnowledgeNet.load_xml_file("config/knowledge_nets/english.xml", "初级英语")
     }
   end
