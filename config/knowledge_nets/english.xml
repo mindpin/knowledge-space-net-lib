@@ -171,7 +171,6 @@
     <checkpoint id="checkpoint-2" deep="6">
       <learned target="set-3"/>
       <learned target="set-1"/>
-      <learned target="checkpoint-1"/>
       <learned target="set-2"/>
       <learned target="set-6"/>
       <learned target="set-7"/>
