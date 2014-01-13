@@ -111,8 +111,8 @@
         </node>
       </nodes>
       <nodes-relations>
-        <parent-child parent="node-19" child="node-20"/>
-        <parent-child parent="node-20" child="node-21"/>
+        <parent-child parent="node-101" child="node-102"/>
+        <parent-child parent="node-102" child="node-103"/>
       </nodes-relations>
     </set>
     <set id="set-7" name="基础词汇: 人物" icon="set-7" deep="2">
