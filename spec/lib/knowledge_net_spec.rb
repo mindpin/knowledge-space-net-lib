@@ -72,6 +72,17 @@ describe KnowledgeSpaceNetLib::KnowledgeNet do
   }
 
   it{
+    node_24 = @net.find_node_by_id("node-24")
+    node_24.id.should == "node-24"
+    node_24.ancestor_ids.should == [
+      "node-15", "node-16", "node-17", "node-18", 
+      "node-1", "node-2", "node-4", "node-5", 
+      "node-6", "node-7", "node-8", "node-9", 
+      "node-31", "node-32", "node-33", "node-34", 
+      "node-10", "node-11", "node-13", "node-14", "node-23"]
+  }
+
+  it{
     net = KnowledgeSpaceNetLib::KnowledgeNet.find("javascript")
     net.name.should == "javascript"
     net.name.should == "javascript"

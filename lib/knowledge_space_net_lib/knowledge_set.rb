@@ -27,6 +27,23 @@ module KnowledgeSpaceNetLib
       end
     end
 
+    def ancestor
+      result_arr = []
+      _ancestor_each_parent(self, result_arr)
+      result_arr.uniq
+    end
+
+    def _ancestor_each_parent(set, result_arr)
+      set.parents.each do |s|
+        result_arr << s
+        _ancestor_each_parent(s, result_arr)
+      end
+    end
+
+    def required_nodes
+      nodes.select{|node|node.required}
+    end
+
     def root_nodes
       kns = []
       nodes.each do |v|

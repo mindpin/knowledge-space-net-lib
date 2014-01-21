@@ -28,6 +28,30 @@ module KnowledgeSpaceNetLib
       @net.find_set_by_id(@set_id)
     end
 
+    def ancestor
+      arr = []
+      arr += set.ancestor.map{|a|a.required_nodes}.flatten
+      arr += _ancestor_in_self_set
+      arr.uniq
+    end
+
+    def ancestor_ids
+      ancestor.map{|a|a.id}
+    end
+
+    def _ancestor_in_self_set
+      result_arr = []
+      _ancestor_in_self_set_each_parent(self, result_arr)
+      result_arr.uniq
+    end
+
+    def _ancestor_in_self_set_each_parent(node, result_arr)
+      node.parents.each do |n|
+        result_arr << n
+        _ancestor_in_self_set_each_parent(n, result_arr)
+      end
+    end
+
     def parents
       @parent_ids.map do |id|
         @net.find_node_by_id(id)

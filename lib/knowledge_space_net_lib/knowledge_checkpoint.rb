@@ -17,5 +17,8 @@ module KnowledgeSpaceNetLib
       end
     end
 
+    def required_nodes
+      []
+    end
   end
 end
