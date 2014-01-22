@@ -140,8 +140,8 @@ module KnowledgeSpaceNetLib
       KnowledgeSpaceNetLib::DATA.values
     end
 
-    def self.find(name)
-      KnowledgeSpaceNetLib::DATA[name]
+    def self.find(id)
+      KnowledgeSpaceNetLib::DATA[id]
     end
 
   end
