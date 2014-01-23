@@ -2,7 +2,7 @@ require 'nokogiri'
 
 module KnowledgeSpaceNetLib
   class KnowledgeNet
-    attr_accessor :id, :name, :sets, :checkpoints, :relations
+    attr_accessor :id, :name, :sets, :nodes, :checkpoints, :relations
 
     def initialize(doc, id, name)
       @id   = id

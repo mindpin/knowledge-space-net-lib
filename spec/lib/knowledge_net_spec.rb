@@ -14,9 +14,11 @@ describe KnowledgeSpaceNetLib::KnowledgeNet do
     @net.id.should == "test1"
     @net.name.should == "测试1"
     @net.sets.count.should == 8
+    @net.nodes.count.should == 35
     @net.checkpoints.count.should == 1
     @net.root_sets.count.should == 1
 
+    @net.nodes.first.class.should == KnowledgeSpaceNetLib::KnowledgeNode
     @net.sets.first.class.should == KnowledgeSpaceNetLib::KnowledgeSet
     @net.checkpoints.first.class.should == KnowledgeSpaceNetLib::KnowledgeCheckpoint
     @net.root_sets.first.class.should == KnowledgeSpaceNetLib::KnowledgeSet
