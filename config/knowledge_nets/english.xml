@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <knowledge-field>
   <sets>
-    <set id="set-1" name="基础词汇: 文具" icon="set-1" deep="4">
+    <set id="set-1" name="基础: 文具" icon="set-1" deep="4">
       <nodes>
         <node id="node-1" name="拥有" required="true">
           <desc>拥有的动作</desc>
@@ -12,7 +12,7 @@
       </nodes>
       <nodes-relations/>
     </set>
-    <set id="set-2" name="基础词汇: 数字" icon="set-2" deep="2">
+    <set id="set-2" name="基础: 数字" icon="set-2" deep="2">
       <nodes>
         <node id="node-3" name="数字-1" required="true">
           <desc>数字 1~5</desc>
@@ -23,7 +23,7 @@
       </nodes>
       <nodes-relations/>
     </set>
-    <set id="set-3" name="基础词汇: 衣服" icon="set-3" deep="5">
+    <set id="set-3" name="基础: 衣服" icon="set-3" deep="5">
       <nodes>
         <node id="node-5" name="衣服" required="true">
           <desc>夹克，T恤衫</desc>
@@ -31,7 +31,7 @@
       </nodes>
       <nodes-relations/>
     </set>
-    <set id="set-4" name="基础词汇: 颜色" icon="set-4" deep="5">
+    <set id="set-4" name="基础: 颜色" icon="set-4" deep="5">
       <nodes>
         <node id="node-6" name="颜色-1" required="true">
           <desc>红，蓝，黄，紫，橙等颜色</desc>
@@ -45,7 +45,7 @@
       </nodes>
       <nodes-relations/>
     </set>
-    <set id="set-5" name="基础词汇: 运动" icon="set-5" deep="7">
+    <set id="set-5" name="基础: 运动" icon="set-5" deep="7">
       <nodes>
         <node id="node-9" name="运动" required="true">
           <desc>跑，跳，游泳</desc>
@@ -56,7 +56,7 @@
       </nodes>
       <nodes-relations/>
     </set>
-    <set id="set-6" name="基础词汇: 动物" icon="set-6" deep="7">
+    <set id="set-6" name="基础: 动物" icon="set-6" deep="7">
       <nodes>
         <node id="node-11" name="动物-1" required="true">
           <desc>鸟，熊猫，大象和猴子</desc>
@@ -70,7 +70,7 @@
       </nodes>
       <nodes-relations/>
     </set>
-    <set id="set-7" name="基础词汇: 人物" icon="set-7" deep="1">
+    <set id="set-7" name="基础: 人物" icon="set-7" deep="1">
       <nodes>
         <node id="node-200" name="家庭成员" required="true">
           <desc>爸爸，妈妈，祖父，祖母</desc>
@@ -81,7 +81,7 @@
       </nodes>
       <nodes-relations/>
     </set>
-    <set id="set-8" name="基础词汇: 饮食" icon="set-8" deep="2">
+    <set id="set-8" name="基础: 饮食" icon="set-8" deep="2">
       <nodes>
         <node id="node-16" name="饮食" required="true">
           <desc>食物和饮料</desc>
@@ -92,7 +92,7 @@
       </nodes>
       <nodes-relations/>
     </set>
-    <set id="set-9" name="基础词汇: 身体部位" icon="set-9" deep="8">
+    <set id="set-9" name="基础: 身体部位" icon="set-9" deep="8">
       <nodes>
         <node id="node-18" name="身体部位-1" required="true">
           <desc>头发，脸，鼻子，眼睛，耳朵</desc>
